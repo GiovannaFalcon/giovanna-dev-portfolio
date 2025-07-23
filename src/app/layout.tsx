@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const eb_gramond = EB_Garamond({
   subsets: ["latin"],
   variable: "--font-serif",
-  weight: ["400"],
+  weight: ["800"],
 });
 
 export const metadata: Metadata = {
