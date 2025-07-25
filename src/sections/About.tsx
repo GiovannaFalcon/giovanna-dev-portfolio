@@ -1,3 +1,169 @@
+import { SectionHeader } from "@/components/SectionHeader";
+import { Card } from "@/components/Card";
+import StarIcon from "@/assets/icons/star.svg";
+import JavascriptIcon from "@/assets/icons/square-js.svg";
+import HtmlIcon from "@/assets/icons/html5.svg";
+import CssIcon from "@/assets/icons/css3.svg";
+import ReactIcon from "@/assets/icons/react.svg";
+import ChromeIcon from "@/assets/icons/chrome.svg";
+import GithubIcon from "@/assets/icons/github.svg";
+import { TechIcon } from "@/components/TechIcon";
+import mapImage from "@/assets/images/map.png";
+import Image from "next/image";
+import smileMemoji from "@/assets/images/memoji-smile.png";
+import { CardHeader } from "@/components/CardHeader";
+import { ToolboxItems } from "@/components/ToolboxItems";
+
+const toolboxItems = [
+  {
+    title: "JavaScript",
+    iconType: JavascriptIcon,
+  },
+  {
+    title: "HTML5",
+    iconType: HtmlIcon,
+  },
+  {
+    title: "CSS3",
+    iconType: CssIcon,
+  },
+  {
+    title: "React",
+    iconType: ReactIcon,
+  },
+  {
+    title: "Chrome",
+    iconType: ChromeIcon,
+  },
+  {
+    title: "Github",
+    iconType: GithubIcon,
+  },
+];
+
+const hobbies = [
+  {
+    title: "Music",
+    emoji: "🎵",
+    left: "5%",
+    top: "5%",
+  },
+  {
+    title: "Movie",
+    emoji: "🎬",
+    left: "50%",
+    top: "5%",
+  },
+  {
+    title: "Reading",
+    emoji: "📚",
+    left: "10%",
+    top: "35%",
+  },
+  {
+    title: "Car",
+    emoji: "🛞",
+    left: "35%",
+    top: "40%",
+  },
+  {
+    title: "Paiting",
+    emoji: "🎨",
+    left: "70%",
+    top: "45%",
+  },
+  {
+    title: "Hiking",
+    emoji: "👟",
+    left: "5%",
+    top: "65%",
+  },
+  {
+    title: "Puzzle Games",
+    emoji: "🧩",
+    left: "45%",
+    top: "60%",
+  },
+];
+
 export const AboutSection = () => {
-  return <div>About Section</div>;
+  return (
+    <section className="py-20">
+      <div className="container">
+        <SectionHeader
+          eyebrow="About Me"
+          title="A Glimpse Into My Work"
+          description="Learn more about who I am, what I do, and what inspires me."
+        />
+        <div className="mt-20 grid gap-8 md:grid-cols-5">
+          <Card className="md:col-span-2">
+            <div className="flex flex-col">
+              <div className="inline-flex items-center gap-2">
+                <StarIcon className="size-9 text-emerald-300" />
+                <h3 className="font-serif text-4xl">Who I am</h3>
+              </div>
+              <h2 className="text-lg font-semibold text-white/70 mt-2">
+                Get to know me like an old friend.
+              </h2>
+              <hr className="border-t border-white/20 mt-2 mb-4 md:mt-5" />
+              <p className="md:text-sm lg:text-xl text-white/80">
+                Hey, I’m <span className="font-medium">Giovanna</span>, a
+                developer passionate about technology and design. I love turning
+                ideas into modern, interactive websites using React, Next.js,
+                and Tailwind CSS. My goal is to grow into a Full Stack developer
+                and build impactful digital solutions.
+              </p>
+            </div>
+          </Card>
+          <Card className="h-[320px] p-0 md:col-span-3">
+            <CardHeader
+              title="My Toolbox"
+              description="Explore the technologies and tools I use to craft exceptional digital experiences."
+              className="px-6 pt-6"
+            />
+            <ToolboxItems items={toolboxItems} className="mt-6" />
+            <ToolboxItems
+              items={toolboxItems}
+              className="mt-6"
+              itemsWrapperClassName="-translate-x-1/2"
+            />
+          </Card>
+          <Card className="h-[320px] p-0 flex flex-col md:col-span-2">
+            <CardHeader
+              title="Beyond the Code"
+              description="Explore my interests and hobbies beyond the digital environment."
+              className="px-6 py-6"
+            />
+            <div className="relative flex-1">
+              {hobbies.map((hobby) => (
+                <div
+                  key={hobby.title}
+                  className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute md:p-1"
+                  style={{
+                    left: hobby.left,
+                    top: hobby.top,
+                  }}
+                >
+                  <span className="font-medium text-gray-950">
+                    {hobby.title}
+                  </span>
+                  <span>{hobby.emoji}</span>
+                </div>
+              ))}
+            </div>
+          </Card>
+          <Card className="h-[320px] p-0 relative md:col-span-3">
+            <Image
+              src={mapImage}
+              alt="Map image"
+              className="w-full h-auto md:h-full md:object-cover"
+            />
+            <div className="absolute size-16 top-1/2 left-1/2 -translate-x-20 -translate-y-16 rounded-full rounded-br-none bg-gradient-to-r from-emerald-300 to-sky-400 after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-0 after:rounded-full after:rounded-br-none after:outline-gray-950/30 md:-translate-x-28 md:translate-y-1/2 md:rounded-full md:rounded-tr-none md:after:rounded-full md:after:rounded-tr-none ">
+              <Image src={smileMemoji} alt="smiling memoji" className="mt-1" />
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
 };
