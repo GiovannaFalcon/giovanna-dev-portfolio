@@ -1,3 +1,4 @@
+"use client";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import StarIcon from "@/assets/icons/star.svg";
@@ -7,12 +8,13 @@ import CssIcon from "@/assets/icons/css3.svg";
 import ReactIcon from "@/assets/icons/react.svg";
 import ChromeIcon from "@/assets/icons/chrome.svg";
 import GithubIcon from "@/assets/icons/github.svg";
-import { TechIcon } from "@/components/TechIcon";
 import mapImage from "@/assets/images/map.png";
 import Image from "next/image";
 import smileMemoji from "@/assets/images/memoji-smile.png";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const toolboxItems = [
   {
@@ -87,6 +89,7 @@ const hobbies = [
 ];
 
 export const AboutSection = () => {
+  const constraintRef = useRef(null);
   return (
     <section className="py-20">
       <div className="container">
@@ -121,11 +124,15 @@ export const AboutSection = () => {
               description="Explore the technologies and tools I use to craft exceptional digital experiences."
               className="px-6 pt-6"
             />
-            <ToolboxItems items={toolboxItems} className="mt-6" />
             <ToolboxItems
               items={toolboxItems}
               className="mt-6"
-              itemsWrapperClassName="-translate-x-1/2"
+              itemsWrapperClassName="animate-move-left [animation-duration:30s]"
+            />
+            <ToolboxItems
+              items={toolboxItems}
+              className="mt-6"
+              itemsWrapperClassName="animate-move-right [animation-duration:15s]"
             />
           </Card>
           <Card className="h-[320px] p-0 flex flex-col md:col-span-2">
@@ -134,21 +141,23 @@ export const AboutSection = () => {
               description="Explore my interests and hobbies beyond the digital environment."
               className="px-6 py-6"
             />
-            <div className="relative flex-1">
+            <div className="relative flex-1" ref={constraintRef}>
               {hobbies.map((hobby) => (
-                <div
+                <motion.div
                   key={hobby.title}
                   className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute md:p-1"
                   style={{
                     left: hobby.left,
                     top: hobby.top,
                   }}
+                  drag
+                  dragConstraints={constraintRef}
                 >
                   <span className="font-medium text-gray-950">
                     {hobby.title}
                   </span>
                   <span>{hobby.emoji}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </Card>
@@ -158,8 +167,15 @@ export const AboutSection = () => {
               alt="Map image"
               className="w-full h-auto md:h-full md:object-cover"
             />
-            <div className="absolute size-16 top-1/2 left-1/2 -translate-x-20 -translate-y-16 rounded-full rounded-br-none bg-gradient-to-r from-emerald-300 to-sky-400 after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-0 after:rounded-full after:rounded-br-none after:outline-gray-950/30 md:-translate-x-28 md:translate-y-1/2 md:rounded-full md:rounded-tr-none md:after:rounded-full md:after:rounded-tr-none ">
-              <Image src={smileMemoji} alt="smiling memoji" className="mt-1" />
+            <div className="absolute size-16 top-1/2 left-1/2 -translate-x-20 -translate-y-16 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 rounded-br-none after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-0 after:rounded-full after:rounded-br-none after:outline-gray-950/30 md:-translate-x-28 md:translate-y-1/2 md:rounded-full md:rounded-tr-none md:after:rounded-full md:after:rounded-tr-none">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10">
+                <Image
+                  src={smileMemoji}
+                  alt="smiling memoji"
+                  className="mt-1"
+                />
+              </div>
             </div>
           </Card>
         </div>
