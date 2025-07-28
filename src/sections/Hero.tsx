@@ -8,18 +8,21 @@ import { HeroOrbit } from "@/components/HeroOrbit";
 
 export const HeroSection = () => {
   return (
-    <section className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip" id="home">
-      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
+    <section
+      className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip"
+      id="home"
+    >
+      <div className="absolute inset-0 pointer-events-none [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div
-          className="absolute inset-0 -z-30 opacity-5"
+          className="absolute inset-0 pointer-events-none -z-10 opacity-5"
           style={{
             backgroundImage: `url(${grainImage.src})`,
           }}
         ></div>
-        <div className="size-[620px] hero-ring"></div>
-        <div className="size-[820px] hero-ring"></div>
-        <div className="size-[1020px] hero-ring"></div>
-        <div className="size-[1220px] hero-ring"></div>
+        <div className="size-[620px] hero-ring pointer-events-none"></div>
+        <div className="size-[820px] hero-ring pointer-events-none"></div>
+        <div className="size-[1020px] hero-ring pointer-events-none"></div>
+        <div className="size-[1220px] hero-ring pointer-events-none"></div>
         <HeroOrbit size={430} rotation={-14} shouldOrbit orbitDuration="30s">
           <SparkleIcon className="size-8 text-emerald-300/20" />
         </HeroOrbit>
@@ -86,15 +89,23 @@ export const HeroSection = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-        <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
+      <div className="flex flex-col md:flex-row justify-center z-10 items-center mt-8 gap-4">
+        <a
+          href="#projects"
+          className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl"
+        >
           <span className="font-semibold">Explore My Work</span>
-          <ArrowDown className=" size-4" />
-        </button>
-        <button className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl">
+          <ArrowDown className="size-4" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/giovanna-f-659600377/"
+          className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span>👋</span>
           <span className="font-semibold">Let's Connect</span>
-        </button>
+        </a>
       </div>
     </section>
   );
