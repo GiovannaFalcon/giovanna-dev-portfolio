@@ -17,7 +17,7 @@ export const ContactSection = () => {
             </div>
             <div >
               <a
-                href="https://www.linkedin.com/in/giovanna-f-659600377/"
+                href="https://www.linkedin.com/in/giovannafalcon/"
                 className="text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900"
                 target="_blank"
                 rel="noopener noreferrer"

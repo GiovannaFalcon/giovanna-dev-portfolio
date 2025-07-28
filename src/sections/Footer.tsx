@@ -3,7 +3,7 @@ import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 const footerLinks = [
   {
     title: "Linkedin",
-    href: "https://www.linkedin.com/in/giovanna-f-659600377/",
+    href: "https://www.linkedin.com/in/giovannafalcon/",
   },
   {
     title: "GitHub",

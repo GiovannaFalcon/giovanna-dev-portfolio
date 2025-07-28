@@ -98,7 +98,7 @@ export const HeroSection = () => {
           <ArrowDown className="size-4" />
         </a>
         <a
-          href="https://www.linkedin.com/in/giovanna-f-659600377/"
+          href="https://www.linkedin.com/in/giovannafalcon/"
           className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl"
           target="_blank"
           rel="noopener noreferrer"
