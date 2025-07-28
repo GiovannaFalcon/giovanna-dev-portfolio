@@ -91,11 +91,14 @@ export const ProjectsSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <a href={project.link}>
-                    <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-6 md:w-auto px-6">
-                      <span>Visit Live Site</span>
-                      <ArrowUpRightIcon className="size-5" />
-                    </button>
+                  <a
+                    href={project.link}
+                    className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-6 md:w-auto px-6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>Visit Live Site</span>
+                    <ArrowUpRightIcon className="size-5" />
                   </a>
                 </div>
                 <div className="relative">
