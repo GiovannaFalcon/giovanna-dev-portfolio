@@ -2,16 +2,16 @@ import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 
 const footerLinks = [
   {
-    title: "Instagram",
-    href: "#",
+    title: "Linkedin",
+    href: "https://www.linkedin.com/in/giovanna-f-659600377/",
   },
   {
     title: "GitHub",
-    href: "#",
+    href: "https://github.com/GiovannaFalcon",
   },
   {
-    title: "WhatsApp",
-    href: "#",
+    title: "E-mail",
+    href: "giovannafalcon.dev@gmail.com",
   },
 ];
 

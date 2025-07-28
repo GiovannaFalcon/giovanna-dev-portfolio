@@ -2,7 +2,7 @@ import ArrowupRightIcon from "@/assets/icons/arrow-up-right.svg";
 
 export const ContactSection = () => {
   return (
-    <section className="py-16 pt-14">
+    <section className="py-16 pt-14" id="contact">
       <div className="container">
         <div className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 py-8 px-10 rounded-3xl text-center md:text-left">
           <div className="flex flex-col md:flex-row gap-8 items-center md:gap-16">
