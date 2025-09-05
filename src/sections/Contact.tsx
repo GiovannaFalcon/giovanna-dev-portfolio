@@ -4,7 +4,7 @@ export const ContactSection = () => {
   return (
     <section className="py-16 pt-14 relative z-20" id="contact">
       <div className="container">
-        <div className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 py-8 px-10 rounded-3xl text-center md:text-left">
+        <div className="bg-gradient-to-r from-[#512DCD] to-[#A880F1] text-[#EFEFEF] py-8 px-10 rounded-3xl text-center md:text-left">
           <div className="flex flex-col md:flex-row gap-8 items-center md:gap-16">
             <div>
               <h2 className="font-serif text-2xl md:text-3xl">
@@ -17,7 +17,7 @@ export const ContactSection = () => {
             </div>
             <div >
               <a
-                href="https://www.linkedin.com/in/giovannafalcon/"
+                href="https://www.linkedin.com/in/giovannafalcon/" 
                 className="text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900"
                 target="_blank"
                 rel="noopener noreferrer"

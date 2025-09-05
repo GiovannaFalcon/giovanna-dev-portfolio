@@ -1,10 +1,11 @@
+import Image from "next/image";
+
 import project1 from "@/assets/images/project1.png";
 import project2 from "@/assets/images/project2.png";
 import project3 from "@/assets/images/project3.png";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
-import Image from "next/image";
 
 const portfolioProjects = [
   {
@@ -12,9 +13,9 @@ const portfolioProjects = [
     year: "2025",
     title: "Design SaaS Landing Page",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Website animations and interactions" },
+      { title: "IReal-time component modification" },
+      { title: "Logical structuring of an interactive website" },
     ],
     link: "https://layers-landing-page-khaki.vercel.app/",
     image: project1,
@@ -24,9 +25,9 @@ const portfolioProjects = [
     year: "2025",
     title: "AI SEO Startup Landing Page",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      { title: "Product-focused animations" },
+      { title: "Creating components in the Hero section" },
+      { title: "Mouse tracker in the Footer section" },
     ],
     link: "https://project-ai-startup-landingpage.vercel.app/",
     image: project2,
@@ -36,9 +37,9 @@ const portfolioProjects = [
     year: "2025",
     title: "AI Productivity Landing Page",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Creating cards for plans" },
+      { title: "Using images throughout the page" },
+      { title: "Responsibility for all screen formats" },
     ],
     link: "https://elevate-saas.vercel.app/",
     image: project3,
@@ -50,7 +51,7 @@ export const ProjectsSection = () => {
     <section className="pb-16 lg:py-24" id="projects">
       <div className="container">
         <div className="flex justify-center">
-          <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-center bg-clip-text text-transparent">
+          <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-[#8F5AF5] to-[#B696F0] text-center bg-clip-text text-transparent">
             Real-world Results
           </p>
         </div>
@@ -64,7 +65,7 @@ export const ProjectsSection = () => {
           {portfolioProjects.map((project) => (
             <div
               key={project.title}
-              className="bg-gray-800 rounded-3xl z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 px-8 pt-8 after:pointer-events-none md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky top-0"
+              className="bg-[#160b33] rounded-3xl z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 px-8 pt-8 after:pointer-events-none md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky top-0"
             >
               <div
                 className="absolute inset-0 -z-10 opacity-5"
@@ -74,7 +75,7 @@ export const ProjectsSection = () => {
               ></div>
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
-                  <div className="bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent bg-clip-text inline-flex gap-2 font-bold uppercase tracking-widest text-sm">
+                  <div className="bg-gradient-to-r from-[#8F5AF5] to-[#B696F0] text-transparent bg-clip-text inline-flex gap-2 font-bold uppercase tracking-widest text-sm">
                     <span>{project.company}</span>
                     <span>&bull;</span>
                     <span>{project.year}</span>
@@ -86,7 +87,7 @@ export const ProjectsSection = () => {
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">
                     {project.results.map((result) => (
                       <li className="flex gap-2 text-sm md:text-base text-white/50">
-                        <CheckCircleIcon className="size-5 md:size-6" />
+                        <CheckCircleIcon className="size-5 md:size-6 text-[#BB9EF1]" />
                         <span>{result.title}</span>
                       </li>
                     ))}

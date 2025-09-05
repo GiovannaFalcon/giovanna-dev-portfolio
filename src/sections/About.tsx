@@ -1,20 +1,25 @@
 "use client";
+
+import Image from "next/image";
+
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
+import { CardHeader } from "@/components/CardHeader";
+import { ToolboxItems } from "@/components/ToolboxItems";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+
 import StarIcon from "@/assets/icons/star.svg";
 import JavascriptIcon from "@/assets/icons/square-js.svg";
 import HtmlIcon from "@/assets/icons/html5.svg";
 import CssIcon from "@/assets/icons/css3.svg";
 import ReactIcon from "@/assets/icons/react.svg";
-import ChromeIcon from "@/assets/icons/chrome.svg";
-import GithubIcon from "@/assets/icons/github.svg";
-import mapImage from "@/assets/images/map.png";
-import Image from "next/image";
+import NextIcon from "@/assets/icons/next.svg";
+import ShopifyIcon from "@/assets/icons/shopify.svg";
+import TailwindIcon from "@/assets/icons/tailwind.svg";
+import mapImage from "@/assets/images/map.png"
 import smileMemoji from "@/assets/images/memoji-smile.png";
-import { CardHeader } from "@/components/CardHeader";
-import { ToolboxItems } from "@/components/ToolboxItems";
-import { motion } from "framer-motion";
-import { useRef } from "react";
+
 
 const toolboxItems = [
   {
@@ -34,30 +39,34 @@ const toolboxItems = [
     iconType: ReactIcon,
   },
   {
-    title: "Chrome",
-    iconType: ChromeIcon,
+    title: "Next",
+    iconType: NextIcon,
   },
   {
-    title: "Github",
-    iconType: GithubIcon,
+    title: "Shopify",
+    iconType: ShopifyIcon,
+  },
+  {
+    title: "Tailwind CSS",
+    iconType: TailwindIcon,   
   },
 ];
 
 const hobbies = [
   {
     title: "Music",
-    emoji: "🎵",
+    emoji: "🎧",
     left: "5%",
     top: "5%",
   },
   {
     title: "Movie",
-    emoji: "🎬",
+    emoji: "🍿",
     left: "50%",
     top: "5%",
   },
   {
-    title: "Reading",
+    title: "Study",
     emoji: "📚",
     left: "10%",
     top: "35%",
@@ -69,8 +78,8 @@ const hobbies = [
     top: "40%",
   },
   {
-    title: "Paiting",
-    emoji: "🎨",
+    title: "Languages",
+    emoji: "🌎",
     left: "70%",
     top: "45%",
   },
@@ -102,7 +111,7 @@ export const AboutSection = () => {
           <Card className="md:col-span-2">
             <div className="flex flex-col">
               <div className="inline-flex items-center gap-2">
-                <StarIcon className="size-9 text-emerald-300" />
+                <StarIcon className="size-9 text-[#8F5AF5]" />
                 <h3 className="font-serif text-4xl">Who I am</h3>
               </div>
               <h2 className="text-lg font-semibold text-white/70 mt-2">
@@ -145,7 +154,7 @@ export const AboutSection = () => {
               {hobbies.map((hobby) => (
                 <motion.div
                   key={hobby.title}
-                  className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute md:p-1"
+                  className="inline-flex items-center gap-2 px-8 bg-gradient-to-r from-[#8F5AF5] to-[#B696F0] rounded-full py-4 absolute md:p-1 cursor-pointer" 
                   style={{
                     left: hobby.left,
                     top: hobby.top,
@@ -153,10 +162,10 @@ export const AboutSection = () => {
                   drag
                   dragConstraints={constraintRef}
                 >
-                  <span className="font-medium text-gray-950">
+                  <span className="font-medium text-gray-900 px-2">
                     {hobby.title}
                   </span>
-                  <span>{hobby.emoji}</span>
+                  <span className="pr-1.5">{hobby.emoji}</span>
                 </motion.div>
               ))}
             </div>
@@ -167,9 +176,9 @@ export const AboutSection = () => {
               alt="Map image"
               className="w-full h-auto md:h-full md:object-cover"
             />
-            <div className="absolute size-16 top-1/2 left-1/2 -translate-x-20 -translate-y-16 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 rounded-br-none after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-0 after:rounded-full after:rounded-br-none after:outline-gray-950/30 md:-translate-x-28 md:translate-y-1/2 md:rounded-full md:rounded-tr-none md:after:rounded-full md:after:rounded-tr-none">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]"></div>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10">
+            <div className="absolute size-16 top-1/2 left-1/2 -translate-x-20 -translate-y-16 rounded-full bg-gradient-to-r from-[#8F5AF5] to-[#B696F0] rounded-br-none after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-0 after:rounded-full after:rounded-br-none after:outline-gray-950/30 md:-translate-x-28 md:translate-y-1/2 md:rounded-full md:rounded-tr-none md:after:rounded-full md:after:rounded-tr-none">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#8F5AF5] to-[#B696F0]from-[#8F5AF5] to-[#B696F0] -z-20 animate-ping [animation-duration:2s]"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#8F5AF5] to-[#B696F0] -z-10">
                 <Image
                   src={smileMemoji}
                   alt="smiling memoji"

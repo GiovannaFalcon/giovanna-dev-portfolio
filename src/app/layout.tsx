@@ -12,7 +12,7 @@ const eb_gramond = EB_Garamond({
 
 export const metadata: Metadata = {
   title: "Giovanna Falcon Dev - Portfolio",
-  description: "Created with the help of Frontend Tribe",
+  description: "Created with Next | React and Framer Motion ",
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
         className={twMerge(
           inter.variable,
           eb_gramond.variable,
-          "bg-gray-900 text-white antialiased font-sans"
+          "bg-[#0e0620] text-[#EFEFEF] antialiased font-sans"
         )}
       >
         {children}
